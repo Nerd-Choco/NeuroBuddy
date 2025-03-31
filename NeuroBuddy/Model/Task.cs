@@ -10,13 +10,17 @@ namespace NeuroBuddy.Model
 {
     class Task
     {
-        public Task() { }
+        public Task()
+        {
+            
+        }
 
-        public Task(string name, Category category, double length)
+        public Task(string name, Category category, double length, string[] notes)
         {
             Name = name;
             Category = category;
             Length = length;
+            Notes = notes; 
         }
 
        //properties 
@@ -40,7 +44,17 @@ namespace NeuroBuddy.Model
             get { return Tag; }
             set { Tag = value; }
         }
+        public string[] Notes
+        {
+            get { return Notes; }
+            set { Notes = value; }
+        }
        
+        public string Date
+        {
+            get { return Date; }
+            set { Date = value; }
+        }
         //methods
         // i don't feel like this one is needed since we already have the parametrized constuctor
         // //if you don't see it necessary , remove 
@@ -49,6 +63,7 @@ namespace NeuroBuddy.Model
             this.Name = NewTask.Name;
             this.Category = NewTask.Category;
             this.Length = NewTask.Length;
+            this.Notes = NewTask.Notes; 
         }
         public Task GetTask()
         {

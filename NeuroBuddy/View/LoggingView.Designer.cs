@@ -48,6 +48,7 @@ namespace NeuroBuddy
             SignUpBtn.TabIndex = 0;
             SignUpBtn.Text = "Sign up";
             SignUpBtn.UseVisualStyleBackColor = true;
+            SignUpBtn.Click += this.SignUpBtn_Click;
             // 
             // SignInBtn
             // 
@@ -57,7 +58,7 @@ namespace NeuroBuddy
             SignInBtn.TabIndex = 1;
             SignInBtn.Text = "Sign In";
             SignInBtn.UseVisualStyleBackColor = true;
-            SignInBtn.Click += this.SignInBtn_Click;
+            SignInBtn.Click += SignInBtn_Click;
             // 
             // NameBox
             // 
@@ -110,7 +111,7 @@ namespace NeuroBuddy
             PerformLayout();
         }
 
-      
+
 
         #endregion
 
