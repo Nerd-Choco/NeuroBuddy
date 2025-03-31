@@ -26,5 +26,11 @@ namespace NeuroBuddy.View
         {
 
         }
+
+        private void ScheduleTaskBtn_Click(object sender, EventArgs e)
+        {
+            scheduledTaskForm view = new scheduledTaskForm();
+            view.Show(); 
+        }
     }
 }

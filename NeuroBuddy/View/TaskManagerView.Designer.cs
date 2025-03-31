@@ -35,7 +35,7 @@
             label3 = new Label();
             checkedListBox1 = new CheckedListBox();
             label4 = new Label();
-            button1 = new Button();
+            ScheduleTaskBtn = new Button();
             textBox2 = new TextBox();
             label5 = new Label();
             splitter1 = new Splitter();
@@ -103,14 +103,15 @@
             label4.Size = new Size(0, 16);
             label4.TabIndex = 6;
             // 
-            // button1
+            // ScheduleTaskBtn
             // 
-            button1.Location = new Point(179, 176);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 29);
-            button1.TabIndex = 7;
-            button1.Text = "Schedule Task";
-            button1.UseVisualStyleBackColor = true;
+            ScheduleTaskBtn.Location = new Point(179, 176);
+            ScheduleTaskBtn.Name = "ScheduleTaskBtn";
+            ScheduleTaskBtn.Size = new Size(97, 29);
+            ScheduleTaskBtn.TabIndex = 7;
+            ScheduleTaskBtn.Text = "Schedule Task";
+            ScheduleTaskBtn.UseVisualStyleBackColor = true;
+            ScheduleTaskBtn.Click += ScheduleTaskBtn_Click;
             // 
             // textBox2
             // 
@@ -167,7 +168,7 @@
             Controls.Add(splitter1);
             Controls.Add(label5);
             Controls.Add(textBox2);
-            Controls.Add(button1);
+            Controls.Add(ScheduleTaskBtn);
             Controls.Add(label4);
             Controls.Add(checkedListBox1);
             Controls.Add(label3);
@@ -191,7 +192,7 @@
         private Label label3;
         private CheckedListBox checkedListBox1;
         private Label label4;
-        private Button button1;
+        private Button ScheduleTaskBtn;
         private TextBox textBox2;
         private Label label5;
         private Splitter splitter1;

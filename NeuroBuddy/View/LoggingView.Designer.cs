@@ -48,7 +48,7 @@ namespace NeuroBuddy
             SignUpBtn.TabIndex = 0;
             SignUpBtn.Text = "Sign up";
             SignUpBtn.UseVisualStyleBackColor = true;
-            SignUpBtn.Click += this.SignUpBtn_Click;
+            SignUpBtn.Click += SignUpBtn_Click;
             // 
             // SignInBtn
             // 
@@ -72,9 +72,9 @@ namespace NeuroBuddy
             NameLabel.AutoSize = true;
             NameLabel.Location = new Point(28, 71);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(38, 16);
+            NameLabel.Size = new Size(59, 16);
             NameLabel.TabIndex = 3;
-            NameLabel.Text = "Name";
+            NameLabel.Text = "Username";
             // 
             // PasswordLabel
             // 
