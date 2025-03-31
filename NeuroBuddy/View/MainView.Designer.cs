@@ -86,6 +86,7 @@
             createNewCategoryToolStripMenuItem.Name = "createNewCategoryToolStripMenuItem";
             createNewCategoryToolStripMenuItem.Size = new Size(181, 22);
             createNewCategoryToolStripMenuItem.Text = "Create new category";
+            createNewCategoryToolStripMenuItem.Click += createNewCategoryToolStripMenuItem_Click;
             // 
             // viewCategories4ToolStripMenuItem
             // 
@@ -135,7 +136,7 @@
             // 
             createANewTaskToolStripMenuItem.ForeColor = Color.Coral;
             createANewTaskToolStripMenuItem.Name = "createANewTaskToolStripMenuItem";
-            createANewTaskToolStripMenuItem.Size = new Size(180, 22);
+            createANewTaskToolStripMenuItem.Size = new Size(168, 22);
             createANewTaskToolStripMenuItem.Text = "Create a new task ";
             createANewTaskToolStripMenuItem.Click += createANewTaskToolStripMenuItem_Click;
             // 
@@ -143,7 +144,7 @@
             // 
             viewTasksToolStripMenuItem.ForeColor = Color.Coral;
             viewTasksToolStripMenuItem.Name = "viewTasksToolStripMenuItem";
-            viewTasksToolStripMenuItem.Size = new Size(180, 22);
+            viewTasksToolStripMenuItem.Size = new Size(168, 22);
             viewTasksToolStripMenuItem.Text = "View tasks";
             // 
             // calenderToolStripMenuItem
@@ -208,6 +209,7 @@
             button5.TabIndex = 4;
             button5.Text = "New Category";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += createNewCategoryToolStripMenuItem_Click;
             // 
             // button4
             // 

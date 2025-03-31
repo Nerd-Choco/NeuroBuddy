@@ -28,5 +28,10 @@ namespace NeuroBuddy
         {
             TaskManagerWindow();
         }
+        private void createNewCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCategroyView view = new NewCategroyView();
+            view.Show();
+        }
     }
 }
