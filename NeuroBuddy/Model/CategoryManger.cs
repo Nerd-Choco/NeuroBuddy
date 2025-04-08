@@ -15,7 +15,7 @@ namespace NeuroBuddy.Model
         {
             return categories;
         }
-        
+
        public  void AddCategory(Category newCategory)
         {
             categories.Add(newCategory);
@@ -36,7 +36,7 @@ namespace NeuroBuddy.Model
                 throw new Exception($"Category: {oldCategory.Name} doesn't exist, couldn't modify list");
 
             categories.Remove(oldCategory);
-            categories.Add(newCategory);
+            categories.Insert(indexOld, newCategory);
         }
     }
 }
