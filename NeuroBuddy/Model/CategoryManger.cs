@@ -8,27 +8,35 @@ using System.Threading.Tasks;
 
 namespace NeuroBuddy.Model
 {
-    class CategoryManger:CategoryMangerInterface
+    class CategoryManger : CategoryMangerInterface
     {
-        List<Category> Categories; 
+        List<Category> categories = new List<Category>(); 
         public IEnumerable<Category>GetCategories()
         {
-            return Categories;
+            return categories;
         }
+        
        public  void AddCategory(Category newCategory)
         {
-            Categories.Add(newCategory);
+            categories.Add(newCategory);
         }
+
         public void RemoveCategory(Category Category)
         {
-            if(!Categories.Contains(Category))
+            if(!categories.Contains(Category))
                 throw new Exception("Tasks list doesn't contain this task");
-            return;
-            Categories.Remove(Category);
+
+            categories.Remove(Category);
         }
+
         public void ModifyCategory(Category oldCategory, Category newCategory)
         {
-            oldCategory.SetCategory(newCategory);
+            var indexOld = categories.IndexOf(oldCategory);
+            if (indexOld == -1)
+                throw new Exception($"Category: {oldCategory.Name} doesn't exist, couldn't modify list");
+
+            categories.Remove(oldCategory);
+            categories.Add(newCategory);
         }
     }
 }

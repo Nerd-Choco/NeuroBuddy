@@ -15,14 +15,6 @@ namespace NeuroBuddy.Model
 
         public List<Category> SubCategories;
 
-        public void SetCategory(Category newCategory)
-        {
-            this.Name = newCategory.Name;
-            this.isRoot = newCategory.isRoot;
-            this.Rootcategory = newCategory.Rootcategory;
-            this.SubCategories.Clear();
-            this.SubCategories.AddRange(newCategory.SubCategories);
-        }
         public Category(string name,Category root)
         {
             Name = name;
@@ -33,7 +25,9 @@ namespace NeuroBuddy.Model
             this.isRoot = isRoot;
         }
 
-        public Category() { }
+        public Category() 
+        { 
 
+        }
     }
 }
