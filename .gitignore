@@ -389,4 +389,4 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # test
 
-.mp4
+*.mp4
