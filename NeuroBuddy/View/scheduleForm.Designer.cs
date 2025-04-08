@@ -1,6 +1,6 @@
 ﻿namespace NeuroBuddy.View
 {
-    partial class scheduledTaskForm
+    partial class scheduleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -185,7 +185,7 @@
             comboBox1.Size = new Size(121, 24);
             comboBox1.TabIndex = 12;
             // 
-            // scheduledTaskForm
+            // scheduleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -195,8 +195,8 @@
             Controls.Add(label1);
             Controls.Add(DateLabel);
             Controls.Add(dateTimePicker1);
-            Name = "scheduledTaskForm";
-            Text = "scheduledTaskForm";
+            Name = "scheduleForm";
+            Text = "scheduleForm";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();

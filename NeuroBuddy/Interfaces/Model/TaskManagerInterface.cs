@@ -1,8 +1,13 @@
+using NeuroBuddy.Model;
+
 interface TaskManagerInterface
 {
-        IEnumerable<Task> GetTasks();
+    IEnumerable<NeuroTask> GetTasks();
 
-        void AddTask(Task newTask);
+    void AddTask(NeuroTask newTask);
 
-        void RemoveTask(Task task); // can't repeat same task interface
+    void RemoveTask(NeuroTask task); // can't repeat same task interface
+
+    void ModifyTask(NeuroTask OldTask, NeuroTask NewTask);
+
 }

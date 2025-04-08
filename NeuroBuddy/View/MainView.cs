@@ -33,5 +33,10 @@ namespace NeuroBuddy
             NewCategroyView view = new NewCategroyView();
             view.Show();
         }
+
+        private void mainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

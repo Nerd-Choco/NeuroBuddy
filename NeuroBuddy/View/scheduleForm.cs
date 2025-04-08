@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NeuroBuddy.View
 {
-    public partial class scheduledTaskForm : Form
+    public partial class scheduleForm : Form
     {
-        public scheduledTaskForm()
+        public scheduleForm()
         {
             InitializeComponent();
         }

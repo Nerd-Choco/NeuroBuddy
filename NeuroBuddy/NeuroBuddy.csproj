@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="View\CustomControls\" />
+    <Folder Include="Interfaces\View\" />
   </ItemGroup>
 
 </Project>

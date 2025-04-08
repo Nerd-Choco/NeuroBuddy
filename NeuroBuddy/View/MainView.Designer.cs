@@ -47,13 +47,13 @@
             editPToolStripMenuItem = new ToolStripMenuItem();
             logOutToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            panel1 = new Panel();
+            MainPanel = new Panel();
             button5 = new Button();
             button4 = new Button();
             button2 = new Button();
             NewTask = new Button();
             menuStrip1.SuspendLayout();
-            panel1.SuspendLayout();
+            MainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -71,6 +71,7 @@
             mainToolStripMenuItem.Name = "mainToolStripMenuItem";
             mainToolStripMenuItem.Size = new Size(49, 20);
             mainToolStripMenuItem.Text = "Main ";
+            mainToolStripMenuItem.Click += mainToolStripMenuItem_Click;
             // 
             // schudledToolStripMenuItem
             // 
@@ -190,16 +191,16 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // panel1
+            // MainPanel
             // 
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(NewTask);
-            panel1.Location = new Point(134, 85);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(413, 238);
-            panel1.TabIndex = 1;
+            MainPanel.Controls.Add(button5);
+            MainPanel.Controls.Add(button4);
+            MainPanel.Controls.Add(button2);
+            MainPanel.Controls.Add(NewTask);
+            MainPanel.Location = new Point(134, 85);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(413, 238);
+            MainPanel.TabIndex = 1;
             // 
             // button5
             // 
@@ -235,7 +236,7 @@
             NewTask.Name = "NewTask";
             NewTask.Size = new Size(151, 99);
             NewTask.TabIndex = 0;
-            NewTask.Text = "New Task";
+            NewTask.Text = "New NeuroTask";
             NewTask.UseVisualStyleBackColor = true;
             NewTask.Click += createANewTaskToolStripMenuItem_Click;
             // 
@@ -245,13 +246,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(671, 391);
-            Controls.Add(panel1);
+            Controls.Add(MainPanel);
             Controls.Add(menuStrip1);
             Name = "MainView";
             Text = "Neuro Buddy";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            panel1.ResumeLayout(false);
+            MainPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,7 +277,7 @@
         private ToolStripMenuItem createANewActivityToolStripMenuItem;
         private ToolStripMenuItem viewSheduledActivitiesToolStripMenuItem;
         private ToolStripMenuItem viewCategories4ToolStripMenuItem;
-        private Panel panel1;
+        private Panel MainPanel;
         private Button button2;
         private Button NewTask;
         private Button button5;
