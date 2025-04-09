@@ -18,22 +18,20 @@ namespace NeuroBuddy.Model
     class NeuroTask
     {
         string name = string.Empty;
-        string category = string.Empty;
-        double length = 0;
+        Category category;
         string tag = string.Empty;
         string notes = string.Empty;
-        string date = string.Empty;
+        bool isRepeated = false;
         States states;
         public NeuroTask()
         {
             
         }
 
-        public NeuroTask(string name, string category, double length, string notes, States states)
+        public NeuroTask(string name, Category category, string notes, States states)
         {
             this.name = name;
             this.category = category;
-            this.length = length;
             this.notes = notes;
             this.states = states;
         }
@@ -50,16 +48,6 @@ namespace NeuroBuddy.Model
             get { return category; }
             set { category = value; }
         }
-        public double Length
-        {
-            get { return length; }
-            set { length = value; }
-        }
-        public string Tag
-        {
-            get { return tag; }
-            set { tag= value; }
-        }
         public string Notes
         {
             get { return notes; }
@@ -70,20 +58,16 @@ namespace NeuroBuddy.Model
             get { return states; }
             set { states = value; }
         }
-        public string Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
+      
         //methods
         public void SetTask(NeuroTask NewTask)
         {
             this.Name = NewTask.Name;
             this.Category = NewTask.Category;
-            this.Length = NewTask.Length;
             this.Notes = NewTask.Notes;
             this.States = NewTask.States;
         }
+      
         public NeuroTask GetTask()
         {
             return this; 

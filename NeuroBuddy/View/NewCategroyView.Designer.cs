@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             comboBox1 = new ComboBox();
-            label1 = new Label();
+            parentCategory = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
             AddCategory = new Button();
@@ -42,20 +42,19 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Root" });
-            comboBox1.Location = new Point(48, 165);
+            comboBox1.Location = new Point(48, 91);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 24);
             comboBox1.TabIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // label1
+            // parentCategory
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(48, 146);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 16);
-            label1.TabIndex = 1;
-            label1.Text = "Category";
+            parentCategory.AutoSize = true;
+            parentCategory.Location = new Point(48, 72);
+            parentCategory.Name = "parentCategory";
+            parentCategory.Size = new Size(91, 16);
+            parentCategory.TabIndex = 1;
+            parentCategory.Text = "Parent Category";
             // 
             // label2
             // 
@@ -89,7 +88,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(AddCategory);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(parentCategory);
             panel1.Controls.Add(comboBox1);
             panel1.Location = new Point(16, 26);
             panel1.Name = "panel1";
@@ -99,7 +98,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(48, 73);
+            label3.Location = new Point(48, 130);
             label3.Name = "label3";
             label3.Size = new Size(49, 16);
             label3.TabIndex = 5;
@@ -121,7 +120,7 @@
         #endregion
 
         private ComboBox comboBox1;
-        private Label label1;
+        private Label parentCategory;
         private Label label2;
         private TextBox textBox1;
         private Button AddCategory;

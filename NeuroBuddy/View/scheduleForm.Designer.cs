@@ -171,7 +171,7 @@
             panel1.Controls.Add(numericUpDown3);
             panel1.Controls.Add(numericUpDown2);
             panel1.Controls.Add(numericUpDown1);
-            panel1.Location = new Point(39, 149);
+            panel1.Location = new Point(42, 149);
             panel1.Name = "panel1";
             panel1.Size = new Size(223, 118);
             panel1.TabIndex = 11;
