@@ -218,7 +218,7 @@
             button4.Name = "button4";
             button4.Size = new Size(151, 99);
             button4.TabIndex = 3;
-            button4.Text = "Schedule Activity";
+            button4.Text = "Schedule NeuroActivity";
             button4.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -227,7 +227,7 @@
             button2.Name = "button2";
             button2.Size = new Size(151, 99);
             button2.TabIndex = 1;
-            button2.Text = "Log Activity";
+            button2.Text = "Log NeuroActivity";
             button2.UseVisualStyleBackColor = true;
             // 
             // NewTask

@@ -1,3 +1,5 @@
+using NeuroBuddy.Model;
+
 namespace NeuroBuddy
 {
     internal static class Program
