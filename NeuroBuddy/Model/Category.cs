@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace NeuroBuddy.Model
 {
-    class Category
+    public class Category
     {
         public string Name { get; set; }
         public Category? RootCategory { get; private set;}

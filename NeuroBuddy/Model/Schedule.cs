@@ -1,4 +1,4 @@
-﻿enum PeriodOfDay
+﻿public enum PeriodOfDay
 {
     Dwan,
     Morning,
@@ -7,49 +7,39 @@
     Sunset,
     Evening,
     Night
-}
+} 
+// Shaer:
+// if you want to use this, it should be calculated from the time value (eg: 14:02 => Afternoon),
+// but certainly not a saved value (look below)
 
-class Schedule
+public class Schedule
 {
-     DateTime startTime;
-     DateTime endTime;
-     TimeSpan Duration;
-     PeriodOfDay periodOfDay;
-    // I don't think we need to access the set publicly, getting them to maybe display them
-    // or to categorize them based on the timeRange or period of time
-    public DateTime StartTIme 
-    {
-        get { return startTime; }
-    }
-    public DateTime EndTime
-    {
-        get { return endTime; }
-    }
-    public PeriodOfDay Period 
-    {
-        get { return periodOfDay; }
-    }
+     public DateTime StartTime {get; set;}
 
-    public Schedule() { }
-    //here you can set a time rand like from 11 to 12 etc.
-    public void SetTimeRange(DateTime startTime, DateTime endTime)
-    {
-        this.startTime = startTime;
-        this.endTime = endTime;
-         Duration = endTime - startTime;
-    }
+     public DateTime EndTime {get; set;}
+
+     public TimeSpan Duration => EndTime - StartTime; // Shaer: same as {get {return EndTime - StartTime;}}
+
+
+     // Shaer:
+     //PeriodOfDay PeriodOfDay
+     //{
+        //get
+        //{
+            // calculate it and return it here
+        //}
+     //}
+
+    
+    
+    // Shaer: why do we need a note for this function LOL
+
     //this function is to set a duration (like how many hours would it take)
     // you can set which period of the day so if you want to add a reminder, it can ring at that time.
     // or maybe we can create in the future list of tasks ,activities of each period of the day (would be cool actually) 
-    public void SetDuration(TimeSpan activityDuration,PeriodOfDay periodOfDay)
+    public void SetDuration(TimeSpan activityDuration)
     {
-        Duration = activityDuration;
-        this.periodOfDay = periodOfDay;
-
-    }
-    public TimeSpan GetDuration()
-    {
-        return Duration.Duration(); 
+        EndTime = StartTime + activityDuration;
     }
 
 }

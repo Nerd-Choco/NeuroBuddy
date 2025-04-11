@@ -8,69 +8,39 @@ using System.Threading.Tasks;
 
 namespace NeuroBuddy.Model
 {
-    enum States
+    public enum NeuroTaskStatus
     {
         NotStarted,
         InProgress,
         Incomplete,
         Complete,
     }
-    class NeuroTask
+
+    public class NeuroTask
     {
-        string name = string.Empty;
-        Category category;
-        string tag = string.Empty;
-        string notes = string.Empty;
-        bool isRepeated = false;
-        States states;
-        public NeuroTask()
+        //properties 
+        public string Name { get; set; }
+
+        public Category? Category { get; set; }
+
+        public string Note { get; set; }
+
+        public NeuroTaskStatus Status { get; set; }
+
+        public NeuroTask ()
         {
-            
+            Name = "";
+            Category = null;
+            Note = "";
+            Status = NeuroTaskStatus.NotStarted;
         }
 
-        public NeuroTask(string name, Category category, string notes, States states)
+        public NeuroTask(string Name, Category Category, string Notes, NeuroTaskStatus Status)
         {
-            this.name = name;
-            this.category = category;
-            this.notes = notes;
-            this.states = states;
-        }
-
-       //properties 
-        public string Name
-        {
-            get { return name; }
-
-            set => name = value;
-        }
-        public string Category 
-        {
-            get { return category; }
-            set { category = value; }
-        }
-        public string Notes
-        {
-            get { return notes; }
-            set { notes = value; }
-        }
-        public States States 
-        {
-            get { return states; }
-            set { states = value; }
-        }
-      
-        //methods
-        public void SetTask(NeuroTask NewTask)
-        {
-            this.Name = NewTask.Name;
-            this.Category = NewTask.Category;
-            this.Notes = NewTask.Notes;
-            this.States = NewTask.States;
-        }
-      
-        public NeuroTask GetTask()
-        {
-            return this; 
+            this.Name = Name;
+            this.Category = Category;
+            this.Note = Notes;
+            this.Status = Status;
         }
 
     }

@@ -31,7 +31,7 @@
             label1 = new Label();
             Task_Box = new TextBox();
             Category = new Label();
-            CategoryList = new ComboBox();
+            CategoryListComboBox = new ComboBox();
             State = new Label();
             StateCheckBox = new CheckedListBox();
             label4 = new Label();
@@ -70,12 +70,12 @@
             // 
             // CategoryList
             // 
-            CategoryList.FormattingEnabled = true;
-            CategoryList.Location = new Point(32, 112);
-            CategoryList.Name = "CategoryList";
-            CategoryList.Size = new Size(125, 24);
-            CategoryList.TabIndex = 3;
-            CategoryList.SelectedIndexChanged += CategoryList_SelectedIndexChanged;
+            CategoryListComboBox.FormattingEnabled = true;
+            CategoryListComboBox.Location = new Point(32, 112);
+            CategoryListComboBox.Name = "CategoryList";
+            CategoryListComboBox.Size = new Size(125, 24);
+            CategoryListComboBox.TabIndex = 3;
+            CategoryListComboBox.SelectedIndexChanged += CategoryList_SelectedIndexChanged;
             // 
             // State
             // 
@@ -167,7 +167,7 @@
             Controls.Add(label4);
             Controls.Add(StateCheckBox);
             Controls.Add(State);
-            Controls.Add(CategoryList);
+            Controls.Add(CategoryListComboBox);
             Controls.Add(Category);
             Controls.Add(Task_Box);
             Controls.Add(label1);
@@ -183,7 +183,7 @@
         private Label label1;
         private TextBox Task_Box;
         private Label Category;
-        private ComboBox CategoryList;
+        private ComboBox CategoryListComboBox;
         private Label State;
         private CheckedListBox StateCheckBox;
         private Label label4;

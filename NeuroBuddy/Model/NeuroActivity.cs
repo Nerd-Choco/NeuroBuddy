@@ -16,7 +16,7 @@ namespace NeuroBuddy.Model
         Category _category;
         Schedule _schedule;
         bool _isRepeated;
-        States _states;
+        NeuroTaskStatus _states;
         string _note;
 
         public string name
@@ -36,19 +36,15 @@ namespace NeuroBuddy.Model
 
         }
         
-        public  NeuroActivity() 
-        {
-
-        }
       public  NeuroActivity(string name, Category category)
         {
             this.name = name;
             this.category = category;
-            this._states = States.NotStarted;
+            this._states = NeuroTaskStatus.NotStarted;
         }
         public bool IsLogged()
         {
-            return _states == States.Complete;
+            return _states == NeuroTaskStatus.Complete;
         }
 
 

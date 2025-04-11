@@ -13,21 +13,27 @@ namespace NeuroBuddy.View
 {
     public partial class TaskManagerView : Form
     {
+        // your naming of UI elements is soooo misleading
+        // I should see: TaskNameTextBox, CategoryListComboBox, CategoryLabel, etc
+        // it should be fairly easy to use these controls inside the code here
+        // but now I have to go to the GUI window to actually see what is that thing called Category (which is probably CategoryLabel?)
+
         TaskManager taskManager;
         NeuroTask newTask;
-        public TaskManagerView()
+        public TaskManagerView(IEnumerable<Category> CategoriesList)
         {
             InitializeComponent();
-           
+
+            taskManager = new TaskManager(); // what is this?!
+
+            CategoryListComboBox.DataSource = CategoriesList.ToList(); // makes a local copy
         }
 
+        // remove this event
         private void TaskMangerView_Load(object sender, EventArgs e)
         {
-            newTask = new NeuroTask();
-            taskManager = new TaskManager();
+
         }
-
-
 
         private void ScheduleTaskBtn_Click(object sender, EventArgs e)
         {
@@ -35,35 +41,25 @@ namespace NeuroBuddy.View
             view.Show();
         }
 
+        // remove this event
         private void Task_Box_TextChanged(object sender, EventArgs e)
         {
-            newTask.Name = Task_Box.Text;
+
         }
 
+        // remove this event
         private void CategoryList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            newTask.Category = CategoryList.SelectedIndex.ToString();
+
         }
 
+        // remove this event
         private void StateCheckBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (StateCheckBox.SelectedIndex)
-            {
-                case 0:
-                    newTask.States = States.NotStarted;
-                    break;
-                case 1:
-                    newTask.States = States.InProgress;
-                    break;
-                case 2:
-                    newTask.States = States.Incomplete;
-                    break;
-                case 3:
-                    newTask.States = States.Complete;
-                    break;
-            }
+
         }
 
+        // remove this event
         private void SetReminder_Click(object sender, EventArgs e)
         {
 
@@ -71,6 +67,31 @@ namespace NeuroBuddy.View
 
         private void Add_Click(object sender, EventArgs e)
         {
+            if (CategoryListComboBox.SelectedItem != null)
+                newTask.Category = (Category)CategoryListComboBox.SelectedItem;
+
+            newTask = new NeuroTask();
+
+            newTask.Name = Task_Box.Text; // TaskNameTextBox !!!
+            newTask.Note = textBox2.Text;
+
+            // continue initializing the newTask
+
+            // well, you just created the manager in the constructor, so why bother?
+            // you probably wanted this form to receive the already existing main app's taskmanager
+            // so that it can insert the task into it itself
+            // but there is a better way
+            // create a property called NewTask {get; set;}
+            // init it in your constructor
+            // add two buttons: Ok, Cancel
+            // in their events type DialogResult = blablabla.OK or cancel whatever
+            // this will close your dialog, so you should actually do the lines in this event right before dialogresult
+            // when this dialog closes, the one who opened it shall read the NewTask property
+
+            // so in summary, this form is a dialog, it just returns a NewTask, doesn't know how to add it, uses a public property NewTask and DialogResult to close itself
+            // ofcourse the one opening this dialog should go like:
+            // if (TaskManagerView.ShowDialog() == DialogResult.OK)
+            //     taskManager.Add(TaskManagerView.NewTask);
             taskManager.AddTask(newTask);
         }
     }
