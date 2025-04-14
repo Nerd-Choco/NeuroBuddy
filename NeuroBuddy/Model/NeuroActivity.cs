@@ -20,14 +20,27 @@ namespace NeuroBuddy.Model
 
 
         
-      public  NeuroActivity(string name, Category category)
+      public  NeuroActivity(string name, Category category,Schedule schedule, NeuroStatus status)
         {
-           
+            Name = name;
+            Category = category;
+            Schedule = schedule;
+            Status = status;
+        }
+        public NeuroActivity()
+        {
+            Name = " ";
+            Status = NeuroStatus.NotStarted;
         }
         public bool IsLogged()
         {
             return Status == NeuroStatus.Complete;
         }
+        public void Start()
+        {
+
+        }
+
         
 
     }

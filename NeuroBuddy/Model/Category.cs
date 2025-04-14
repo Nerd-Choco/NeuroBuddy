@@ -18,6 +18,7 @@ namespace NeuroBuddy.Model
 
         public List<Category> SubCategories;
 
+        public Category() { }
         public Category(string name, Category? root = null)
         {
             Name = name;

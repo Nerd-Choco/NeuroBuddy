@@ -11,7 +11,9 @@ namespace NeuroBuddy.Model
     public enum NeuroStatus
     {
         NotStarted,
+        Started,
         InProgress,
+        Paused,
         Incomplete,
         Complete,
     }
