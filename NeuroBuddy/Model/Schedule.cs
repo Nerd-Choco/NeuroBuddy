@@ -28,11 +28,12 @@ public class Schedule
      public TimeSpan ElapsedTime { get; private set; }
      public TimeSpan Duration => EndTime - StartTime; // Shaer: same as {get {return EndTime - StartTime;}}
      public bool IsPaused => LastStartTime == null;
-     
+    public bool IsLogged { get; private set; }
 
 
-     // Shaer:
-    public  PeriodOfDay PeriodOfDay
+
+    // Shaer:
+    public PeriodOfDay PeriodOfDay
     {
         get
         {
@@ -80,13 +81,28 @@ public class Schedule
     }
     public void Reschedule(DateTime newStartTime)
     {
-     // how can we handle if someone reschedules an activity before the current time?
-     // do we need a featrue like that? say I have scheduled workout before after work and ended up doing it in the break.
-     // keep in mind that we have something called Logged activity, it will be a feature where you can log an activity /task that was already done
+        // how can we handle if someone reschedules an activity before the current time?
+        // do we need a featrue like that? say I have scheduled workout before after work and ended up doing it in the break.
+        // keep in mind that we have something called Logged activity, it will be a feature where you can log an activity /task that was already done
+        if (newStartTime < DateTime.Now)
+            throw new Exception("you must log ");
 
         StartTime = newStartTime;
         EndTime = newStartTime + Duration;
     }
+    
+    public void Log(DateTime startedAt, DateTime endedAt)
+    {
+        if (endedAt > DateTime.Now)
+            throw new Exception("Can't log something in the future.");
+
+        IsLogged = true;
+
+        StartTime = startedAt;
+        EndTime = endedAt;
+        LastStartTime = null;
+    }
+
     public TimeSpan GetTotalElapsedTime()
     {
         if (LastStartTime.HasValue)
@@ -96,13 +112,12 @@ public class Schedule
 
         return ElapsedTime;
     }
-
     public NeuroStatus GetCurrentStatus()
     {
         if (ElapsedTime == TimeSpan.Zero && LastStartTime == null && DateTime.Now < StartTime)
             return NeuroStatus.NotStarted;
 
-        if (GetTotalElapsedTime() >= Duration)
+        if (GetTotalElapsedTime() >= Duration||IsLogged)
             return NeuroStatus.Complete;
 
         if (DateTime.Now >= EndTime && GetTotalElapsedTime() < Duration)
