@@ -54,7 +54,7 @@
             parentCategory.Name = "parentCategory";
             parentCategory.Size = new Size(91, 16);
             parentCategory.TabIndex = 1;
-            parentCategory.Text = "Parent Category";
+            parentCategory.Text = "Parent CategoryLabel";
             // 
             // label2
             // 
@@ -79,7 +79,7 @@
             AddCategory.Name = "AddCategory";
             AddCategory.Size = new Size(251, 36);
             AddCategory.TabIndex = 4;
-            AddCategory.Text = "Add Category";
+            AddCategory.Text = "Add CategoryLabel";
             AddCategory.UseVisualStyleBackColor = true;
             // 
             // panel1

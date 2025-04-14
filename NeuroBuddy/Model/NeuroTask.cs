@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NeuroBuddy.Model
 {
-    public enum NeuroTaskStatus
+    public enum NeuroStatus
     {
         NotStarted,
         InProgress,
@@ -25,17 +25,17 @@ namespace NeuroBuddy.Model
 
         public string Note { get; set; }
 
-        public NeuroTaskStatus Status { get; set; }
+        public NeuroStatus Status { get; set; }
 
         public NeuroTask ()
         {
             Name = "";
             Category = null;
             Note = "";
-            Status = NeuroTaskStatus.NotStarted;
+            Status = NeuroStatus.NotStarted;
         }
 
-        public NeuroTask(string Name, Category Category, string Notes, NeuroTaskStatus Status)
+        public NeuroTask(string Name, Category Category, string Notes, NeuroStatus Status)
         {
             this.Name = Name;
             this.Category = Category;

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace NeuroBuddy.View
 {
-    public partial class TaskManagerView : Form
+    public partial class AddTaskView : Form
     {
         // your naming of UI elements is soooo misleading
         // I should see: TaskNameTextBox, CategoryListComboBox, CategoryLabel, etc
@@ -20,50 +20,18 @@ namespace NeuroBuddy.View
 
         TaskManager taskManager;
         NeuroTask newTask;
-        public TaskManagerView(IEnumerable<Category> CategoriesList)
+        public AddTaskView(IEnumerable<Category> CategoriesList)
         {
             InitializeComponent();
-
-            taskManager = new TaskManager(); // what is this?!
-
             CategoryListComboBox.DataSource = CategoriesList.ToList(); // makes a local copy
         }
-
-        // remove this event
-        private void TaskMangerView_Load(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void ScheduleTaskBtn_Click(object sender, EventArgs e)
         {
             scheduleForm view = new scheduleForm();
             view.Show();
         }
 
-        // remove this event
-        private void Task_Box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // remove this event
-        private void CategoryList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // remove this event
-        private void StateCheckBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // remove this event
-        private void SetReminder_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Add_Click(object sender, EventArgs e)
         {
@@ -72,8 +40,8 @@ namespace NeuroBuddy.View
 
             newTask = new NeuroTask();
 
-            newTask.Name = Task_Box.Text; // TaskNameTextBox !!!
-            newTask.Note = textBox2.Text;
+            newTask.Name = TaskNameTextBox.Text; // TaskNameTextBox !!!
+            newTask.Note = NoteTextBox.Text;
 
             // continue initializing the newTask
 

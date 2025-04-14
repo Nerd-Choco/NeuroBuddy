@@ -25,7 +25,7 @@ class TaskManager : TaskManagerInterface
     }
     public void ModifyTask(NeuroTask OldTask, NeuroTask NewTask)
     {
-        OldTask.SetTask(NewTask);
+  //      OldTask.SetTask(NewTask);
     }
     public TaskManager(List<NeuroTask> tasks)
     {

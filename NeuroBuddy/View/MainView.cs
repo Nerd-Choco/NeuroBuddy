@@ -20,7 +20,7 @@ namespace NeuroBuddy
 
         public void TaskManagerWindow()
         {
-            TaskManagerView view = new TaskManagerView();
+            AddTaskView view = new AddTaskView();
             view.Show();
 
         }
