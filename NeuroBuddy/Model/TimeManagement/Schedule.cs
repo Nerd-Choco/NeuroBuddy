@@ -1,16 +1,9 @@
-﻿using NeuroBuddy.Model;
+﻿using NeuroBuddy.Interfaces.Model;
+using NeuroBuddy.Model;
+using NeuroBuddy.Model.Enums;
 using System.Xml.Serialization;
 
-public enum PeriodOfDay
-{
-    Dwan,
-    Morning,
-    Afternoon,
-    Noon,
-    Sunset,
-    Evening,
-    Night
-} 
+
 // Shaer:
 // if you want to use this, it should be calculated from the time value (eg: 14:02 => Afternoon),
 // but certainly not a saved value (look below)
@@ -28,7 +21,9 @@ public class Schedule
      public TimeSpan ElapsedTime { get; private set; }
      public TimeSpan Duration => EndTime - StartTime; // Shaer: same as {get {return EndTime - StartTime;}}
      public bool IsPaused => LastStartTime == null;
-    public bool IsLogged { get; private set; }
+     public bool IsLogged { get; private set; }
+     public bool IsRecurring { get; set; }
+
 
 
 
@@ -38,7 +33,7 @@ public class Schedule
         get
         {
              var StartHour = StartTime.Hour;
-
+      
             if (StartHour >= 4 && StartHour < 6) return PeriodOfDay.Dwan;
             if (StartHour >= 6 && StartHour < 12) return PeriodOfDay.Morning;
             if (StartHour >= 12 && StartHour < 14) return PeriodOfDay.Noon;
@@ -53,10 +48,6 @@ public class Schedule
     
     
     // Shaer: why do we need a note for this function LOL
-
-    //this function is to set a duration (like how many hours would it take)
-    // you can set which period of the day so if you want to add a reminder, it can ring at that time.
-    // or maybe we can create in the future list of tasks ,activities of each period of the day (would be cool actually) 
     public void SetDuration(TimeSpan activityDuration)
     {
         EndTime = StartTime + activityDuration;
@@ -74,26 +65,26 @@ public class Schedule
             LastStartTime = null;
         }
     }
-    public void Delay(TimeSpan DelayValue)
+    public void Postpone(TimeSpan DelayValue)
     {
         StartTime += DelayValue;
         EndTime += DelayValue;
     }
     public void Reschedule(DateTime newStartTime)
     {
-        // how can we handle if someone reschedules an activity before the current time?
-        // do we need a featrue like that? say I have scheduled workout before after work and ended up doing it in the break.
-        // keep in mind that we have something called Logged activity, it will be a feature where you can log an activity /task that was already done
+        //Choco
+       
         if (newStartTime < DateTime.Now)
             throw new Exception("you must log ");
 
         StartTime = newStartTime;
         EndTime = newStartTime + Duration;
     }
-    
+   
     public void Log(DateTime startedAt, DateTime endedAt)
     {
-        if (endedAt > DateTime.Now)
+        //in the UI it must prevent the user from setting logged activity in the future. 
+        if (endedAt > DateTime.Now || startedAt> DateTime.Now)
             throw new Exception("Can't log something in the future.");
 
         IsLogged = true;

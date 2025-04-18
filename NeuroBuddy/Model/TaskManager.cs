@@ -1,5 +1,4 @@
-
-using NeuroBuddy.Model;
+using NeuroBuddy.Model.DataContainers;
 
 class TaskManager : TaskManagerInterface
 {

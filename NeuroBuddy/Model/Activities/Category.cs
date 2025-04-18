@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace NeuroBuddy.Model
+namespace NeuroBuddy.Model.DataContainers
 {
     public class Category
     {
@@ -23,7 +23,7 @@ namespace NeuroBuddy.Model
         {
             Name = name;
             SubCategories = new List<Category>();
-            this.RootCategory = root;
+            RootCategory = root;
         }
 
         public void AddChildCategory(Category child)

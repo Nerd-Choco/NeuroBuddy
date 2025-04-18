@@ -6,17 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeuroBuddy.Model
+namespace NeuroBuddy.Model.DataContainers
 {
-    public enum NeuroStatus
-    {
-        NotStarted,
-        InProgress,
-        Paused,
-        Incomplete,
-        Complete,
-    }
-
     public class NeuroTask
     {
         //properties 
@@ -40,7 +31,7 @@ namespace NeuroBuddy.Model
         {
             this.Name = Name;
             this.Category = Category;
-            this.Note = Notes;
+            Note = Notes;
             this.Status = Status;
         }
 

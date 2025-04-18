@@ -1,4 +1,4 @@
-﻿using NeuroBuddy.Model;
+﻿using NeuroBuddy.Model.DataContainers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

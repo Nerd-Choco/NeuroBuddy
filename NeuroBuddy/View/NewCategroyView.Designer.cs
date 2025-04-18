@@ -63,7 +63,7 @@
             label2.Name = "label2";
             label2.Size = new Size(88, 16);
             label2.TabIndex = 2;
-            label2.Text = "Categroy Name";
+            label2.Text = "Categroy Title";
             // 
             // textBox1
             // 

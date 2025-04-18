@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace NeuroBuddy.Model
+namespace NeuroBuddy.Model.DataContainers
 {
     /*so basically we have scheduled activity and task,
      * one activity can have multiple tasks, a task can have a scheduled activity
@@ -14,7 +14,7 @@ namespace NeuroBuddy.Model
     class NeuroActivity
     {
         
-        public string Name { set; get; }
+        public string Title { set; get; }
         public Category? Category { set; get; }
         public string Description {set;get;}
         public Schedule Schedule { set; get; } = new Schedule();
@@ -27,7 +27,7 @@ namespace NeuroBuddy.Model
 
         public  NeuroActivity(string name, Category category,string description, DateTime StartTime,DateTime EndTime)
         {
-            Name = name;
+            Title = name;
             Category = category;
             Description = description;
             Schedule.StartTime = StartTime;
@@ -36,37 +36,38 @@ namespace NeuroBuddy.Model
         }
         public NeuroActivity(string name, Category category, string description, DateTime StartTime, TimeSpan duration)
         {
-            Name = name;
+            Title = name;
             Category = category;
             Description = description;
             Schedule.StartTime = StartTime;
             Schedule.SetDuration(duration);
-
-
         }
         public NeuroActivity()
         {
-            Name = " ";
+            Title = " ";
             Category = new Category();
             Description = " ";
             Schedule.StartTime =DateTime.Now;
             Schedule.EndTime = DateTime.Now;
         }
-        public void LoggedActivity(DateTime StartTime, DateTime Endtime)
+        public void LoggedActivity()
         {
-            Schedule.Log(StartTime, Endtime);
+            var StartedAt = Schedule.StartTime;
+            var EndedAt = Schedule.EndTime;
+
+            Schedule.Log(StartedAt,EndedAt);
         }
-        public void Start()
+        public void StartActivity()
         {
             Schedule.Start();
         }
-        public void Pause()
+        public void PauseActivity()
         {
             Schedule.Pause();
         }
-        public void DelayActivity(TimeSpan DelayValue)
+        public void PostponeActivity(TimeSpan DelayValue)
         {
-            Schedule.Delay(DelayValue);
+            Schedule.Postpone(DelayValue);
         }
         public void RescheduleActivity(DateTime newStartTime)
         {
