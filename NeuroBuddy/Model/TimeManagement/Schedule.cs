@@ -8,11 +8,6 @@ using System.Xml.Serialization;
 // if you want to use this, it should be calculated from the time value (eg: 14:02 => Afternoon),
 // but certainly not a saved value (look below)
 
-//Choco : some updates on the schedule class.. i had this idea, how too set the status of the activity,
-// like in the phone add what happens is that you set a scheduled activity  and then a reminder would ring on the activity time
-// in the reminder there is options to start the activity or delay, if it started is clicked it should start the activity and start the countdown..
-// you can pause, resume or delay the activity so i created all of this in the scheudle because i thought it should be the main class handling time 
-
 public class Schedule
 {
      public DateTime StartTime {get; set;}
@@ -23,8 +18,6 @@ public class Schedule
      public bool IsPaused => LastStartTime == null;
      public bool IsLogged { get; private set; }
      public bool IsRecurring { get; set; }
-
-
 
 
     // Shaer:
@@ -44,9 +37,6 @@ public class Schedule
             return PeriodOfDay.Night;
         }
     }
-
-    
-    
     // Shaer: why do we need a note for this function LOL
     public void SetDuration(TimeSpan activityDuration)
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeuroBuddy.Model.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Formats.Asn1;

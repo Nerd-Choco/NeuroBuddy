@@ -65,7 +65,7 @@ namespace NeuroBuddy.Model.TimeManagement
                         else
                         {
                             return null;
-                        };
+                        }
                        
                     }
                     break;
