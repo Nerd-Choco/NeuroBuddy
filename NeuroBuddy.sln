@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroBuddyWinForms", "NeuroBuddyWinForms.csproj", "{9BCDBF9C-7AC1-B710-AB41-152ADCD7C1B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BCDBF9C-7AC1-B710-AB41-152ADCD7C1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCDBF9C-7AC1-B710-AB41-152ADCD7C1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCDBF9C-7AC1-B710-AB41-152ADCD7C1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCDBF9C-7AC1-B710-AB41-152ADCD7C1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75423596-A9B2-475F-A2EF-52E9604F66AB}
+	EndGlobalSection
+EndGlobal
