@@ -19,10 +19,17 @@ namespace NeuroBuddy.Views
         {
             var database = manager.GetUserdatabase(textBox1.Text);
 
-            var form1 = new Form1(new CategoryManagerMock(database.Categories));
+            var form1 = new CategoriesView(new CategoryManagerMock(database.Categories));
             form1.Show();
 
+            form1.FormClosed += otherWindowClosed;
+
             Hide();
+        }
+
+        void otherWindowClosed(object? sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

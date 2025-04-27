@@ -3,7 +3,7 @@ using NeuroBuddy.Interfaces;
 
 namespace NeuroBuddy.Views
 {
-    partial class Form1
+    partial class CategoriesView
     {
         /// <summary>
         ///  Required designer variable.

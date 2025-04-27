@@ -3,11 +3,11 @@ using NeuroBuddy.Interfaces;
 
 namespace NeuroBuddy.Views
 {
-    public partial class Form1 : Form
+    public partial class CategoriesView : Form
     {
         ICategoryManager catMan;
 
-        public Form1(ICategoryManager catMan)
+        public CategoriesView(ICategoryManager catMan)
         {
             InitializeComponent();
 
