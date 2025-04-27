@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NeuroBuddy.Core;
+using NeuroBuddy.Interfaces;
 
-namespace NeuroBuddyWinForms
+namespace NeuroBuddy.Mocks
 {
     internal class CategoryManagerMock : ICategoryManager
     {
         List<NeuroCategory> cats;
-        public CategoryManagerMock()
+        public CategoryManagerMock(IEnumerable<NeuroCategory> categories)
         {
-            cats = new()
-            {
-                new NeuroCategory("Health"),
-                new NeuroCategory("House"),
-                new NeuroCategory("Chores")
-            };
-
-            cats.Add(new NeuroCategory("Workout", cats.First()));
+            cats = new List<NeuroCategory>();
+            cats.AddRange(categories);
         }
 
         public void Add(NeuroCategory category)

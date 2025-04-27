@@ -1,4 +1,6 @@
-﻿namespace NeuroBuddy.Interfaces
+﻿using NeuroBuddy.Core;
+
+namespace NeuroBuddy.Interfaces
 {
     public interface IDatabaseManager
     {

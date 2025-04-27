@@ -1,4 +1,7 @@
-﻿namespace NeuroBuddyWinForms
+﻿using NeuroBuddy.Core;
+using NeuroBuddy.Interfaces;
+
+namespace NeuroBuddy.Views
 {
     partial class MainWindow
     {

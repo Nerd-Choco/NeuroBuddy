@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using NeuroBuddy.Core;
+using NeuroBuddy.Interfaces;
+using NeuroBuddy.Mocks;
 
-namespace NeuroBuddyWinForms
+namespace NeuroBuddy.Views
 {
     public partial class MainWindow : Form
     {
@@ -25,7 +19,7 @@ namespace NeuroBuddyWinForms
         {
             var database = manager.GetUserdatabase(textBox1.Text);
 
-            var form1 = new Form1(database.CategoryManager);
+            var form1 = new Form1(new CategoryManagerMock(database.Categories));
             form1.Show();
 
             Hide();

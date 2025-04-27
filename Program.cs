@@ -1,4 +1,9 @@
-namespace NeuroBuddyWinForms
+using NeuroBuddy.Core;
+using NeuroBuddy.Interfaces;
+using NeuroBuddy.Mocks;
+using NeuroBuddy.Views;
+
+namespace NeuroBuddy
 {
     internal static class Program
     {
