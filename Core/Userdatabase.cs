@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace NeuroBuddy.Core;
 
-namespace NeuroBuddyWinForms
+public class Userdatabase
 {
-    public class Userdatabase
-    {
-        public string Username { get; set; }
+    public string Username { get; }
 
-        public ICategoryManager CategoryManager { get; set; }
+    public List<NeuroCategory> Categories {get; }
 
-        
-    }
+    public List<NeuroTask> Tasks {get; }
+
+    
 }

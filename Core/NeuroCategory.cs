@@ -1,8 +1,10 @@
-﻿public class NeuroCategory
-{
-    List<NeuroCategory> children;
+﻿namespace NeuroBuddy.Core;
 
-    public IEnumerable<NeuroCategory> Children => children;
+public class NeuroCategory
+{
+    List<NeuroCategory> childrenCats;
+
+    public IEnumerable<NeuroCategory> Children => childrenCats;
 
     public string Name { get; set; }
 
@@ -28,9 +30,12 @@
         }
     }
 
+    public List<NeuroTask> ChildrenTasks {get;}
+
     public NeuroCategory(string name, NeuroCategory? root = null)
     {
-        children = new List<NeuroCategory>();
+        childrenCats = new List<NeuroCategory>();
+        ChildrenTasks = new List<NeuroTask>();
 
         Name = name;
 
@@ -43,12 +48,33 @@
 
     void AddChild(NeuroCategory child)
     {
-        children.Add(child);
+        childrenCats.Add(child);
     }
 
     void RemoveChild(NeuroCategory child)
     {
-        children.Remove(child);
+        childrenCats.Remove(child);
+    }
+
+    // should only be calleed from NeuroTask
+    public void AddTask(NeuroTask task)
+    {
+        if (task.Category != this)
+            throw new Exception("Cannot add task to this category, it's not set as its parent");
+
+        if (ChildrenTasks.Contains(task))
+            return;
+        
+        ChildrenTasks.Add(task);
+    }
+
+    // should only be calleed from NeuroTask
+    public void RemoveTask(NeuroTask task)
+    {
+        if (!ChildrenTasks.Contains(task))
+            throw new Exception("This task doesn't belong to this category, cannot be removed");
+
+        ChildrenTasks.Remove(task);
     }
 
     public override string ToString()
